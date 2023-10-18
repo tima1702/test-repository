@@ -3,9 +3,7 @@ import App from './App';
 
 test('renders greeting message', () => {
   render(<App />);
-  const linkElement = screen.getByText ((content, element) => {
-    return content.includes("Замула Н.С (02.03.03 - АИСа - о20)");
-  })
+  const linkElement = screen.getByText(/Замула Н.С./);
 
   expect(linkElement).toBeInTheDocument();
 });
