@@ -1,25 +1,23 @@
-name: Build and Deploy React App to GitHub Pages
+name: Build and Deploy
 on:
-  pull_request:
-    branches: [ main ]
+  push:
+    branches:
+      - main
 jobs:
   build-and-deploy:
-    name: Build and Deploy
     runs-on: ubuntu-latest
-
+    concurrency: ci-${{ github.ref }}
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: Build
-        run: npm install
-
-      - name: Test
-        run: npm run test
-
-      - name: Deploy
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         run: |
-          git config --global user.name 'Mefix69'
-          git config --global user.email 'nadyasitulina@gmail.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}    
-          npm run deploy
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build
