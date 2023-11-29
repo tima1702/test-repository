@@ -3,7 +3,6 @@ import './App.css';
 
 function App() {
   const greeting = "Это тестовый проект Ситулиной Надежды Игоревны tete";
-
   // console.log('This is App ');
   return (
     <div className="App">
