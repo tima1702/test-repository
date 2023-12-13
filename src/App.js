@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const greeting = "Михайличенко Данила Максимович";
+  const greeting = "";
 
   console.log('This is App ');
   return (
