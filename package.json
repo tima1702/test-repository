@@ -22,7 +22,7 @@
     "lint": "eslint src/**.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },
+  }, 
   "repository": {
     "url": "https://github.com/nikitoxxxyk/test-repository"
   },
