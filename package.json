@@ -19,7 +19,7 @@
     "lint": "eslint src/**.js"
   },
   "repository": {
-    "url": "https://co6pkust.github.io/test-repository/"
+    "url": "https://co6pkust.github.com/test-repository/"
   },
   "eslintConfig": {
     "extends": [
